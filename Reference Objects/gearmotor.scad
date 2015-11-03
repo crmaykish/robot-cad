@@ -39,6 +39,11 @@ module drive_shaft() {
 	cylinder(r=6, h=6.5);
 	translate([0,0,6.5]){
 		color("Silver")
-		cylinder(r=3, h=15.5);
+
+		difference(){
+			cylinder(r=3, h=15.5);
+			translate([-3,-4, 3.5])
+				cube([0.6, 8, 13]);
+		}	
 	}
 }
