@@ -10,7 +10,7 @@ wheel_adaptor_height = 23;
 slot_size = 2;
 
 screw_hole_radius = 1.75;
-screw_hole_offset = 9.5
+screw_hole_offset = 9.5;
 
 axel_mount();
 

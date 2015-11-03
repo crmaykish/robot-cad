@@ -12,10 +12,10 @@ module bracket(){
 		// bracket
 		union(){
 			cube([length, width, thickness]);
-			translate([0,0,thickness]){
+			translate([0, 0, thickness]){
 				coords = [thickness, width, height - thickness];
 				cube(coords);
-				translate([length - thickness,0,0]){
+				translate([length - thickness, 0, 0]){
 					cube(coords);
 				}
 			}
