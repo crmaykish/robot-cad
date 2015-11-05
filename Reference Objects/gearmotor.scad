@@ -22,12 +22,12 @@ module gearmotor() {
 	}
 }
 
-module mounting_holes() {
+module mounting_holes(hole_radius = 1.5) {
 	color("DarkGrey")
 	for (i = [0:5]){
 		rotate([0, 0, 30 + 60 * i]) {
 			translate([15.5, 0, 0]){
-				cylinder(r=1.5, h=12);
+				cylinder(r=hole_radius, h=12);
 			}
 		}
 	}

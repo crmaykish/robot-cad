@@ -27,7 +27,7 @@ module motor_assembly() {
 		}
 	}
 
-	translate([motorFullLength() + 15, 0, 11.5])	// not exact
-		rotate([0,90,0])
-			wheel();
+	// translate([motorFullLength() + 15, 0, 11.5])	// not exact
+	// 	rotate([0,90,0])
+	// 		wheel();
 }
