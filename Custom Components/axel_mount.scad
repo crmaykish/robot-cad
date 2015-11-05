@@ -15,6 +15,7 @@ screw_hole_offset = 9.5;
 axel_mount();
 
 module axel_mount() {
+	color("Green")
 	// motor mount
 	difference() {
 		cylinder(r=motor_mount_radius, h=motor_mount_height);
@@ -22,19 +23,25 @@ module axel_mount() {
 	}
 
 	// offset
+	color("Green")
 	translate([0, 0, motor_mount_height]){
 		cylinder(r=offset_radius, h=offset_height);
 	}
 
 	// wheel adaptor
+	color("Green")
 	translate([0, 0, motor_mount_height + offset_height]){
-		difference() {
-			cylinder(r=wheel_adaptor_radius, h=wheel_adaptor_height);
-			translate([wheel_adaptor_radius - slot_size, -slot_size / 2, 0])
+		wheel_adaptor();
+	}
+}
+
+module wheel_adaptor() {
+	difference() {
+		cylinder(r=wheel_adaptor_radius, h=wheel_adaptor_height);
+		translate([wheel_adaptor_radius - slot_size, -slot_size / 2, 0])
+			slot();
+			translate([-wheel_adaptor_radius, -slot_size / 2, 0])
 				slot();
-				translate([-wheel_adaptor_radius, -slot_size / 2, 0])
-					slot();
-		}
 	}
 }
 
