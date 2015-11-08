@@ -1,7 +1,6 @@
 use <../Assemblies/motor_and_wheel.scad>
 use <../Reference Objects/gearmotor.scad>
 use <../Utilities/triangle.scad>
-use <../Custom Components/tail.scad>
 
 $fn = 100;
 
@@ -16,17 +15,19 @@ frame_motor_offset = 10;
 
 top_frame_offset_y = (motorRadius() + frame_motor_offset) * 2 - frame_thickness;
 
-motorAssemblies();
+//motorAssemblies();
 
-frame();
+//frame();
 
-translate([0, 0, top_frame_offset_y]) frame();
+//translate([0, 0, top_frame_offset_y]) frame();
 
-motor_mount();
-translate([brace_width + frame_thickness, 0, 0]) motor_mount();
+rotate([0,90,0])
+scale([0.3,1,1]){
+	motor_mount();
+}
+//translate([brace_width + frame_thickness, 0, 0]) motor_mount();
 
 // tail
-translate([(brace_width - 30) / 2 + motorShaftLength(), frame_length + brace_length, 30]) rotate([270, 0, 0]) tail();
 
 module frame(){
 	color("Green")
